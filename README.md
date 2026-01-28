@@ -1,34 +1,21 @@
 ## Project Title
 
-GBDA302 Week 2 Example 3: Platforms (AABB Collisions)
-
----
-
-## Authors
-
-Karen Cochrane and David Han
+("Side Quest Week 2: Simple Game")
 
 ---
 
 ## Description
 
-Adds several rectangular platforms. The blob is drawn as a noisy circle but collides using a simple axis-aligned bounding box (AABB). X and Y are resolved separately to keep behaviour predictable and teachable.
+This is a simple platformer game, where jumping gives the character great pleasure.
 
----
+To move use arrow keys
 
-## Learning Goals
-
-Learning Goals:
-
-- Convert a circular sprite to an AABB for collision
-- Implement overlap test and push-out resolution
-- Manage grounded state only when landing on top faces
-
----
+## The face and background changes to reflect the enjoyment of the character
 
 ## Assets
 
-N/A
+> - `assets/Images/SadFace.png` (origonal artwork created in Canva)
+> - `assets/Images/SmileyFace.png` (origonal artwork created in Canva)
 
 ---
 
@@ -36,4 +23,4 @@ N/A
 
 The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
 
----
+## No other GenAI was used

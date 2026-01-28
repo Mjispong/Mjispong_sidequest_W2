@@ -1,3 +1,11 @@
+let SmileyImage;
+let SadImage;
+
+function preload() {
+  SmileyImage = loadImage("assets/Images/SmileyFace.png");
+  SadImage = loadImage("assets/Images/SadFace.png");
+}
+
 // Y-position of the floor (ground level)
 let floorY3;
 
@@ -73,7 +81,7 @@ function draw() {
 
   // --- Input: left/right movement ---
   let move = 0;
-  if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) move -= 1; // A or ←
+  if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) move -= 1;
   if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) move += 1; // D or →
   blob3.vx += blob3.accel * move;
 
@@ -138,7 +146,16 @@ function draw() {
   // --- Draw the animated blob ---
   blob3.t += blob3.tSpeed;
   drawBlobCircle(blob3);
+  // Draw smiley only while airborne
+  if (!blob3.onGround) {
+    background(255, 255, 0, 120);
+    image(SmileyImage, blob3.x - 40, blob3.y - 40, 80, 80);
+  }
 
+  if (blob3.onGround) {
+    background(173, 216, 230, 120);
+    image(SadImage, blob3.x - 40, blob3.y - 40, 80, 80);
+  }
   // --- HUD ---
   fill(0);
   text("Move: A/D or ←/→  •  Jump: Space/W/↑  •  Land on platforms", 10, 18);
